@@ -53,6 +53,7 @@
             height: 500px;
             margin: 20px auto;
             overflow: hidden;
+            border-radius: 5px;
         }
         .slides {
             position: absolute;
@@ -95,10 +96,12 @@
             display: flex;
             justify-content: center;
             margin-top: -15px;
+            border-radius: 5px;
         }
         .thumbnail {
             margin: 0 2px; /* Zmniejszony odstęp między miniaturkami */
             cursor: pointer;
+            border-radius: 5px;
         }
         .thumbnail img {
             width: 100px;
@@ -106,9 +109,11 @@
             object-fit: cover;
             opacity: 0.6;
             transition: opacity 0.3s, border-radius 0.3s; /* Dodano transition dla border-radius */
+            border-radius: 5px;
         }
         .thumbnail img:hover {
             opacity: 1;
+            border-radius: 5px;
         }
         .active-thumbnail img {
             opacity: 1;
@@ -133,6 +138,7 @@
             width: 250px;
             height: 150px;
             border: 0;
+            border-radius: 5px;
         }
         .contact-info {
             width: 35%;
