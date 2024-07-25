@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamsat</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            color: rgb(69, 69, 69);
+            padding: 20px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            width: 100%;
+        }
+        .nav a {
+            padding: 14px 20px;
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px;
+        }
+        .nav a:hover {
+            background-color: #bbbbbb;
+            color: #000000; /* Złoty kolor */
+            border-radius: 8px;
+        }
+        .slider {
+            position: relative;
+            max-width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider {
+            position: relative;
+            max-width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .active-slide {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev {
+            left: 0;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -15px;
+        }
+        .thumbnail {
+            margin: 0 2px; /* Zmniejszony odstęp między miniaturkami */
+            cursor: pointer;
+        }
+        .thumbnail img {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.3s, border-radius 0.3s; /* Dodano transition dla border-radius */
+        }
+        .thumbnail img:hover {
+            opacity: 1;
+        }
+        .active-thumbnail img {
+            opacity: 1;
+            border-radius: 5px; /* Zaokrąglone krawędzie dla aktywnej miniaturki */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .maps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 60%;
+        }
+        .map {
+            margin: 10px;
+            width: 250px;
+            height: 150px;
+            border: 0;
+        }
+        .contact-info {
+            width: 35%;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+        <nav class="nav">
+            <a href="index.html">Strona Główna</a>
+            <a href="sites/onas.html">O Nas</a>
+            <a href="sites/Usługi">Usługi</a>
+            <a href="sites/galeria.html">Portfolio</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+
+    <div class="slider">
+        <div class="slides active-slide">
+            <img src="img/1.jpeg" alt="Photo 1">
+        </div>
+        <div class="slides">
+            <img src="img/2.jpeg" alt="Photo 2">
+        </div>
+        <div class="slides">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="slides">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="slides">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="slides">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="thumbnail-container">
+        <div class="thumbnail active-thumbnail" onclick="currentSlide(0)">
+            <img src="img/1.jpeg" alt="Photo 1">
+        </div>
+        <div class="thumbnail" onclick="currentSlide(1)">
+            <img src="img/2.jpeg" alt="Photo 2">
+        </div>
+        <div class="thumbnail" onclick="currentSlide(2)">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="thumbnail" onclick="currentSlide(3)">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="thumbnail" onclick="currentSlide(4)">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+        <div class="thumbnail" onclick="currentSlide(5)">
+            <img src="img/3.jpeg" alt="Photo 3">
+        </div>
+    </div>
+
+    <footer>
+        <div class="maps">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2335.3150920462845!2d15.549733900000003!3d54.1744953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470015a0aca7df1f%3A0x123975779b2293af!2sEltrox%20Ko%C5%82obrzeg%20-%20Monitoring%20Alarmy%20Wideodomofony%20Kamery!5e0!3m2!1sen!2spl!4v1721943543726!5m2!1sen!2spl" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="partner">
+            
+        </div>
+        <div class="contact-info">
+            <p>Adres: ul. Przykładowa 1, 00-001 Warszawa, Polska</p>
+            <p>Telefon: +48 123 456 789</p>
+            <p>Email: kontakt@example.com</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides");
+            let thumbnails = document.getElementsByClassName("thumbnail");
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                thumbnails[i].classList.remove("active-thumbnail");
+            }
+            slides[slideIndex].style.display = "block";
+            thumbnails[slideIndex].classList.add("active-thumbnail");
+        }
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlides(slideIndex);
+        });
+    </script>
+</body>
+</html>
