@@ -53,6 +53,7 @@
             height: 500px;
             margin: 20px auto;
             overflow: hidden;
+            border-radius: 5px;
         }
         .slides {
             position: absolute;
@@ -95,10 +96,12 @@
             display: flex;
             justify-content: center;
             margin-top: -15px;
+            border-radius: 5px;
         }
         .thumbnail {
             margin: 0 2px; /* Zmniejszony odstęp między miniaturkami */
             cursor: pointer;
+            border-radius: 5px;
         }
         .thumbnail img {
             width: 100px;
@@ -106,17 +109,19 @@
             object-fit: cover;
             opacity: 0.6;
             transition: opacity 0.3s, border-radius 0.3s; /* Dodano transition dla border-radius */
+            border-radius: 5px;
         }
         .thumbnail img:hover {
             opacity: 1;
+            border-radius: 5px;
         }
         .active-thumbnail img {
             opacity: 1;
             border-radius: 5px; /* Zaokrąglone krawędzie dla aktywnej miniaturki */
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #ebebeb;
+            color: rgb(0, 0, 0);
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -133,6 +138,7 @@
             width: 250px;
             height: 150px;
             border: 0;
+            border-radius: 5px;
         }
         .contact-info {
             width: 35%;
@@ -198,7 +204,8 @@
             <img src="img/3.jpeg" alt="Photo 3">
         </div>
     </div>
-
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-d1836de5-b95f-48ba-b404-27611cf9ef7a" data-elfsight-app-lazy></div>
     <footer>
         <div class="maps">
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2335.3150920462845!2d15.549733900000003!3d54.1744953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470015a0aca7df1f%3A0x123975779b2293af!2sEltrox%20Ko%C5%82obrzeg%20-%20Monitoring%20Alarmy%20Wideodomofony%20Kamery!5e0!3m2!1sen!2spl!4v1721943543726!5m2!1sen!2spl" allowfullscreen="" loading="lazy"></iframe>
